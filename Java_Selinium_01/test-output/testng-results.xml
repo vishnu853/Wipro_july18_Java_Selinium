@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-08-16T14:10:25 IST" name="Default suite" finished-at="2025-08-16T14:10:31 IST" duration-ms="6128">
+    <groups>
+    </groups>
+    <test started-at="2025-08-16T14:10:25 IST" name="Default test" finished-at="2025-08-16T14:10:31 IST" duration-ms="6128">
+      <class name="com.wipro.testng.LaunchBrowser">
+        <test-method signature="testlaunch()[pri:0, instance:com.wipro.testng.LaunchBrowser@78e4deb0]" started-at="2025-08-16T14:10:25 IST" name="testlaunch" finished-at="2025-08-16T14:10:31 IST" duration-ms="6082" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testlaunch -->
+      </class> <!-- com.wipro.testng.LaunchBrowser -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
