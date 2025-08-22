@@ -1,0 +1,10 @@
+Feature: Student Registration Form Automation
+
+@Regression
+  Scenario: Fill student registration form with valid data
+  Given I am on the student registration page
+   Then I fill in the following data:
+      | name           | email             | gender | mobile     | dob         | subject              | hobbies         | picture                                                          | address        | state      | city     |
+      | Vishnu Vardhan | apathi@gmail.com  | Male   | 9652211550 | 09-09-2002  | English, Physics     | Sports, Reading | "C:/Users/VISHNU VARDHAN/OneDrive/Pictures/Screenshots/login.png"| Krishna Nagar  | AP         | Kurnool  |
+    And I submit the form
+    Then the form should be submitted successfully

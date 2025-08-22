@@ -1,0 +1,29 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class gurupage 
+{
+	private WebDriver driver;
+	
+	private By firstName = By.name("firstName");
+	private By lastName = By.name("lastName");
+	private By phone = By.name("phone");
+	private By email = By.name("email");
+	private By address1 = By.name("address1");
+	private By city = By.name("city");
+	private By state = By.name("state");
+	private By postalCode = By.name("postalCode");
+	private By country = By.name("country");
+	private By username = By.name("userName");
+	private By password = By.name("password");
+	private By confirmPassword = By.name("confirmPassword");
+	private By submit=By.name("submit");
+	
+	
+	public gurupage(WebDriver driver) {
+		this.driver = driver;
+	}
+	
+}

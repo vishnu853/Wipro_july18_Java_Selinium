@@ -1,0 +1,33 @@
+package Hooks;
+
+public class Hooks 
+{
+	 private WebDriver driver;
+
+	    @Before
+	    public void setUp(Scenario scenario) {
+	        driver = DriverFactory.getDriver();
+	        System.out.println("Starting scenario: " + scenario.getName());
+	    }
+
+	    @After
+	    public void tearDown(Scenario scenario) {
+	        if (scenario.isFailed()) {
+	            try {
+	                // Capture screenshot as Base64
+	                String base64Screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
+
+	                // Attach to cucumber report
+	                scenario.attach(Base64.getDecoder().decode(base64Screenshot), "image/png", "Failed Screenshot");
+
+	                // Attach directly to Extent report
+	                com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter
+	                        .addTestStepScreenCaptureFromBase64String(base64Screenshot, "Failed Screenshot");
+
+	            } catch (Exception e) {
+	                e.printStackTrace();
+	            }
+	        }
+	        DriverFactory.quitDriver();
+	    }
+}

@@ -1,0 +1,98 @@
+package StepDefinitions;
+
+import java.util.List;
+import java.util.Map;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import utils.DriverFactory;
+
+public class TutorialDefinitions 
+{
+	WebDriver driver = DriverFactory.getDriver();
+	
+	@Given("I am on the student registration page")
+	public void i_am_on_the_student_registration_page() throws InterruptedException 
+	{
+		driver.get("https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php");
+        Thread.sleep(2000);
+	}
+
+	@Then("I fill in the following data:")
+	public void i_fill_in_the_following_data(io.cucumber.datatable.DataTable dataTable) throws InterruptedException 
+	{
+		List<Map<String, String>> rows = dataTable.asMaps(String.class, String.class);
+        Map<String, String> row = rows.get(0);
+        Thread.sleep(2000);
+        
+        driver.findElement(By.name("name")).sendKeys(row.get("name"));
+        Thread.sleep(2000);
+        driver.findElement(By.name("email")).sendKeys(row.get("email"));
+
+        Thread.sleep(2000);
+        String gender = row.get("gender");
+        if ("Male".equalsIgnoreCase(gender)) 
+        {
+            driver.findElement(By.xpath("//input[@value='Male']")).click();
+        } 
+        else if ("Female".equalsIgnoreCase(gender)) 
+        {
+            driver.findElement(By.xpath("//input[@value='Female']")).click();
+        } 
+        else
+        {
+            driver.findElement(By.xpath("//input[@value='Other']")).click();
+        }
+        
+        Thread.sleep(2000);
+        driver.findElement(By.name("mobile")).sendKeys(row.get("mobile"));
+        
+        Thread.sleep(2000);
+        driver.findElement(By.id("datepicker")).sendKeys(row.get("dob"));
+        
+        Thread.sleep(2000);
+        driver.findElement(By.name("subjects")).sendKeys(row.get("subject"));
+        
+        Thread.sleep(2000);
+        driver.findElement(By.id("checkbox1")).click();
+        driver.findElement(By.id("checkbox2")).click();
+
+        Thread.sleep(2000);
+        driver.findElement(By.id("uploadPicture")).sendKeys(row.get("picture"));
+        
+        Thread.sleep(2000);
+        driver.findElement(By.id("currentAddress")).sendKeys(row.get("address"));
+        
+        Thread.sleep(2000);
+        driver.findElement(By.id("state")).click();
+        
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//div[text()='" + row.get("state") + "']")).click();
+
+        Thread.sleep(2000);
+        driver.findElement(By.id("city")).click();
+        
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//div[text()='" + row.get("city") + "']")).click();
+    
+	}
+
+	@Then("I submit the form")
+	public void i_submit_the_form() throws InterruptedException 
+	{
+		Thread.sleep(2000);
+		driver.findElement(By.id("submit")).click();
+		
+		Thread.sleep(2000);
+	}
+
+	@Then("the form should be submitted successfully")
+	public void the_form_should_be_submitted_successfully() 
+	{
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+}

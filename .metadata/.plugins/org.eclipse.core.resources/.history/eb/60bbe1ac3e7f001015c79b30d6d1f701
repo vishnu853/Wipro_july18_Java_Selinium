@@ -1,0 +1,48 @@
+package StepDefinitions;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import utils.DriverFactory;
+
+public class GuruDefintions 
+{
+	WebDriver driver = DriverFactory.getDriver();
+	
+	@Given("user is on the registration page")
+	public void user_is_on_the_registration_page() throws InterruptedException 
+	{
+		driver.get("https://demo.guru99.com/test/newtours/register.php");
+		Thread.sleep(2000);
+	}
+
+	@When("user fills the contact information with {string}, {string},{string} and {string}")
+	public void user_fills_the_contact_information_with_and(String firstName, String lastName, String phone, String email, io.cucumber.datatable.DataTable dataTable) {
+	    
+	}
+
+	@When("user fills the mailing information with {string}, {string},{string}, {string} and {string}")
+	public void user_fills_the_mailing_information_with_and(String address1, String city, String state, String postalcode, String country, io.cucumber.datatable.DataTable dataTable) {
+	   
+	}
+
+	@When("user fills the user information with {string}, \"<password>\"and\"<confirmPassword>\"")
+	public void user_fills_the_user_information_with_password_and_confirm_password(String string, io.cucumber.datatable.DataTable dataTable) {
+	    
+	}
+
+	@When("user click on submit button")
+	public void user_click_on_submit_button() 
+	{
+	    
+	}
+
+	@Then("user should see the registration confirmation message")
+	public void user_should_see_the_registration_confirmation_message() 
+	{
+	   
+	}
+}

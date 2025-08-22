@@ -1,0 +1,6 @@
+extent.reporter.spark.start=true
+extent.reporter.spark.out=target/ExtentReport/SparkReport.html
+
+extent.reporter.spark.vieworder=dashboard,test,category,exception,author,device,log
+systeminfo.OS=Windows
+systeminfo.User=QA Tester

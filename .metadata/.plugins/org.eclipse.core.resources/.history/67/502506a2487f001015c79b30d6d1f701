@@ -1,0 +1,98 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class gurupage {
+
+    private WebDriver driver;
+
+    // Locators
+    private By firstNameField = By.xpath("//input[@name='firstName']");
+    private By lastNameField = By.xpath("//input[@name='lastName']");
+    private By phoneField = By.xpath("//input[@name='phone']");
+    private By emailField = By.xpath("//input[@id='userName']");
+    private By addressField = By.cssSelector("input[name='address1']"); 
+    private By cityField = By.xpath("//input[@name='city']");
+    private By stateField = By.xpath("//input[@name='state']");
+    private By postalCodeField = By.xpath("//input[@name='postalCode']");
+    private By countryDropdown = By.xpath("//select[@name='country']");
+    private By usernameField = By.xpath("//input[@id='email']"); 
+    private By passwordField = By.xpath("//input[@name='password']");
+    private By confirmPasswordField = By.xpath("//input[@name='confirmPassword']");
+    private By submitButton = By.xpath("//input[@name='submit']");
+
+    // Constructor
+    WebDriver driver = DriverFactory.getDriver();
+    demoguru regPage = new demoguru(driver);
+
+    @Given("the user is on the Registration page")
+    public void user_on_registration_page() throws InterruptedException {
+        driver.get("https://demo.guru99.com/test/newtours/register.php");
+        Thread.sleep(2000);
+    }
+
+    @When("the user enters first name {string} and last name {string}")
+    public void user_enters_first_and_lastname(String firstname, String lastname) throws InterruptedException {
+        regPage.enterFirstName(firstname);
+        regPage.enterLastName(lastname);
+    }
+
+    @When("the user enters phone {string}")
+    public void user_enters_phone(String phone) throws InterruptedException {
+        regPage.enterPhone(phone);
+    }
+
+    @When("the user enters email {string}")
+    public void user_enters_email(String email) throws InterruptedException {
+        regPage.enterEmail(email);
+    }
+
+    @When("the user enters address {string}")
+    public void user_enters_address(String address) throws InterruptedException {
+        regPage.enterAddress(address);
+    }
+
+    @When("the user enters city {string}")
+    public void user_enters_city(String city) throws InterruptedException {
+        regPage.enterCity(city);
+    }
+
+    @When("the user enters state {string}")
+    public void user_enters_state(String state) throws InterruptedException {
+        regPage.enterState(state);
+    }
+
+    @When("the user enters postal code {string}")
+    public void user_enters_postalcode(String postalcode) throws InterruptedException {
+        regPage.enterPostalCode(postalcode);
+    }
+
+    @When("the user selects country {string}")
+    public void user_selects_country(String country) throws InterruptedException {
+        regPage.selectCountry(country);
+    }
+
+    @When("the user enters username {string}")
+    public void user_enters_username(String username) throws InterruptedException {
+        regPage.enterUsername(username);
+    }
+
+    @When("the user enters password {string} and confirm password {string}")
+    public void user_enters_passwords(String password, String confirmpassword) throws InterruptedException {
+        regPage.enterPassword(password);
+        regPage.enterConfirmPassword(confirmpassword);
+    }
+
+    @When("the user clicks on the submit button")
+    public void user_clicks_submit() throws InterruptedException {
+        regPage.clickSubmit();
+    }
+
+    @Then("the registration should be successful")
+    public void registration_successful() {
+        System.out.println("Registration submitted successfully!");
+    }
+}
+}

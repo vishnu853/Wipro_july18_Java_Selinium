@@ -1,0 +1,50 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class gurupage 
+{
+	private WebDriver driver;
+	
+	private By firstNameFeild = By.name("firstName");
+	private By lastNameField = By.name("lastName");
+	private By phoneField = By.name("phone");
+	private By emailField = By.name("email");
+	private By address1Field = By.name("address1");
+	private By cityField = By.name("city");
+	private By stateField = By.name("state");
+	private By postalCodeField = By.name("postalCode");
+	private By countryField = By.name("country");
+	private By usernameField = By.name("userName");
+	private By passwordField = By.name("password");
+	private By confirmPasswordField = By.name("confirmPassword");
+	private By submitField=By.name("submit");
+	
+	
+	public gurupage(WebDriver driver)
+	{
+		this.driver = driver;
+	}
+	
+	//Actions
+	public void contactInformatiom(String username,String password,String phone,String email) throws InterruptedException 
+	{
+    	Thread.sleep(2000);
+        driver.findElement(firstNameFeild).sendKeys(firstName);
+        driver.findElement(passwordField).sendKeys(lastName);
+        driver.findElement(phoneFeild).sendKeys(phone);
+        driver.findElement(emailField).sendKeys(email);
+    }
+	
+	public void mailingInformatiom(String address1,String city,String state,String postalcode, String country) throws InterruptedException 
+	{
+    	Thread.sleep(2000);
+        driver.findElement(address1Feild).sendKeys(address1);
+        driver.findElement(cityField).sendKeys(city);
+        driver.findElement(stateFeild).sendKeys(state);
+        driver.findElement(postalCodeField).sendKeys(postalCode);
+    }
+	
+	
+}

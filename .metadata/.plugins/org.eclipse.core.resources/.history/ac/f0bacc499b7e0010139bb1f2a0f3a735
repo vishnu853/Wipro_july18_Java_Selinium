@@ -1,0 +1,128 @@
+package StepDefinitions;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import utils.DriverFactory;
+
+
+public class StepDefinitions 
+{
+	WebDriver driver = DriverFactory.getDriver();
+	 
+	//public static WebDriver driver;
+	@Given("User is on the login page")
+	public void user_is_on_the_login_page() throws InterruptedException 
+	{
+		
+
+		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		
+		Thread.sleep(2000);
+	}
+
+	@When("user enters the username")
+	public void user_enters_the_username() throws InterruptedException 
+	{
+		WebElement username= driver.findElement(By.name("userne"));
+		username.sendKeys("Admin");
+		
+		Thread.sleep(2000);
+	}
+
+	@When("user enters the password")
+	public void user_enters_the_password() throws Exception
+	{
+		WebElement password= driver.findElement(By.xpath("//input[@name= 'password']"));
+		password.sendKeys("admin123");
+		
+		Thread.sleep(2000);
+	}
+	
+	@When("user clicks on the login button")
+	public void user_clicks_on_the_login_button() throws InterruptedException
+	{
+		WebElement loginbutton=driver.findElement(By.xpath("//button[@type='submit']"));
+		loginbutton.click();
+		Thread.sleep(2000);
+	}
+
+	@Then("user is naqvigated to home page")
+	public void user_is_naqvigated_to_home_page() throws InterruptedException 
+	{
+		WebElement admin = driver.findElement(By.xpath("//li[1]//a[1]//span[1]"));
+		 
+		if (admin.isDisplayed()) {
+
+			System.out.println("User is on the home page");
+
+		} else 
+		{
+ 
+			System.out.println("User is not on the home page");
+
+		}
+		
+		Thread.sleep(2000);
+	}
+	
+	// Invalid Credentials
+	@When("user enters the Invalid username")
+	public void user_enters_the_invalid_username() throws InterruptedException 
+	{
+		WebElement username= driver.findElement(By.name("username"));
+		username.sendKeys("Admin1ww");
+		
+		Thread.sleep(2000);
+	}
+	
+	@When("user enters the Invalid password")
+	public void user_enters_the_invalid_password() throws InterruptedException 
+	{
+		WebElement password= driver.findElement(By.xpath("//input[@name= 'password']"));
+		password.sendKeys("admin1234123");
+		
+		Thread.sleep(2000);
+	}
+	
+	
+	@Then("user is dispalyed as Invalid Credentials")
+	public void user_is_dispalyed_as_invalid_credentials() throws InterruptedException 
+	{
+		WebElement invalid=driver.findElement(By.xpath("//div[@class='orangehrm-login-slot']"));
+		if(invalid.isDisplayed())
+		{
+			System.out.println("User entered wrong password");
+		}
+		else 
+		{
+			System.out.println("Reenter the username and password");
+		}
+		Thread.sleep(1000);
+	}
+	
+	@When("user enters the {string} and {string}")
+	public void user_enters_the_and(String username, String password) throws InterruptedException 
+	{
+		WebElement username1 = driver.findElement(By.name("userme"));
+		
+		 
+		username1.sendKeys(username);
+ 
+		Thread.sleep(2000);
+
+ 
+		WebElement password1 = driver.findElement(By.name("password"));
+ 
+		password1.sendKeys(password);
+ 
+		Thread.sleep(2000);
+	}
+}

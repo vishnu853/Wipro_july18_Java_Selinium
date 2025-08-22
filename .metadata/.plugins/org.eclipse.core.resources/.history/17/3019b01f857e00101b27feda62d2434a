@@ -1,0 +1,29 @@
+####################################
+# Extent Report Configuration
+####################################
+
+# Enable Spark (HTML) Report
+extent.reporter.spark.start=true
+extent.reporter.spark.out=target/ExtentReport/SparkReport.html
+
+# Enable PDF Report (optional)
+extent.reporter.pdf.start=true
+extent.reporter.pdf.out=target/ExtentReport/ExtentPdfReport.pdf
+
+# Screenshot Configuration
+screenshot.dir=target/screenshots/
+screenshot.rel.path=../screenshots/
+
+# Order of views in the Spark Report
+extent.reporter.spark.vieworder=dashboard,test,category,exception,author,device,log
+
+# System Information (optional)
+systeminfo.OS=Windows
+systeminfo.User=QA Tester
+systeminfo.Java=17
+systeminfo.Framework=Cucumber-TestNG-Selenium
+
+####################################
+# Misc
+####################################
+extent.reporter.spark.config=src/test/resources/extent-config.xml

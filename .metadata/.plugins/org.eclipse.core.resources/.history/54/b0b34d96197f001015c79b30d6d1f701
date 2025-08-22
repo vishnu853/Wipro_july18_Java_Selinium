@@ -1,0 +1,5 @@
+Feature: Student Registration Form
+
+@Regression
+Scenario: Fill student registration form with valid data
+Given I

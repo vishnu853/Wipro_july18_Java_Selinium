@@ -1,0 +1,17 @@
+Feature: Mercury Tours Registration Form
+
+  Scenario Outline: Successful user registration
+    Given user is on the registration page
+    When user fills the contact information with "<firstName>", "<lastName>","<phone>" and "<email>"
+      | firstName      | lastName | phone      | email             |
+      | Vishnu Vardhan | Apathi   | 9652211550 | vishnu@gmail.com           |
+    And user fills the mailing information with "<address1>", "<city>","<state>", "<postalCode>" and "<country>"
+      | address1          | city       | state          | postalCode | country |
+      | Krishna Nagar     | Kurnool    | AndhraPradesh  | 518002     | India   |
+    And user fills the user information with "<username>", "<password>"and"<confirmPassword>"
+      | username   | password | confirmPassword |
+      | vishnu@09  | avv@123  | avv@123         |
+    And user click on submit button
+    Then user should see the registration confirmation message
+
+  

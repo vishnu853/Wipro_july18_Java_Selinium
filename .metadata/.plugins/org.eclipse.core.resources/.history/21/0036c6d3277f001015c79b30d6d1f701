@@ -1,0 +1,37 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class tutoriallogin {
+	private WebDriver driver;
+
+	private By nameFeild = By.name("name");
+	private By emailFeild = By.name("email");
+	private By radioFeild=By.xpath("//label[@for='gender']")
+
+	// constructor
+
+	public tutoriallogin(WebDriver driver)
+	{
+		this.driver = driver;
+	}
+
+	// page actions
+	// Actions
+	public void enterCredentials(String username, String password) throws InterruptedException {
+		Thread.sleep(4000);
+		driver.findElement(nameField).sendKeys(name);
+		driver.findElement(emailField).sendKeys(password);
+	}
+
+	public void clickLogin() 
+	{
+		driver.findElement(loginButton).click();
+	}
+
+	public String getPageTitle() 
+	{
+		return driver.getTitle();
+	}
+}
