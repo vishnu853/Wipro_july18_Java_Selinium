@@ -2,7 +2,7 @@
 <suite name="MyTestSuite" parallel="methods" thread-count="5">
     <test name="Test1">
         <classes>
-            <class name="com.wipro.LabSession_Aug19.TestNG_lab4"/>
+            <class name="com.wipro.LabSession_Aug18.TestNG_AddProducts"/>
         </classes>
     </test>
 </suite>
