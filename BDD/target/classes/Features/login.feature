@@ -1,21 +1,21 @@
 Feature: Login Functionality
   
 
-#@regression
-#Scenario: Verify the login functionality for valid credentials
-#Given User is on the login page
-#When user enters the username
-#And user enters the password
-#And user clicks on the login button
-#Then user is naqvigated to home page 
+@regression
+Scenario: Verify the login functionality for valid credentials
+Given User is on the login page
+When user enters the username
+And user enters the password
+And user clicks on the login button
+Then user is naqvigated to home page 
 
-#@sanity
-#Scenario: Verify the login functionality for InValid Password credentials
-#Given User is on the login page
-#When user enters the Invalid username
-#And user enters the Invalid password
-#And user clicks on the login button
-#Then user is dispalyed as Invalid Credentials 
+@sanity
+Scenario: Verify the login functionality for InValid Password credentials
+Given User is on the login page
+When user enters the Invalid username
+And user enters the Invalid password
+And user clicks on the login button
+Then user is dispalyed as Invalid Credentials 
 
 
 

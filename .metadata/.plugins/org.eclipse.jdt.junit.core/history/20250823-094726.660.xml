@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="MyTestRunner" project="BDD" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="TestRunner.MyTestRunner" time="36.629">
+    <testsuite name="Registration Form functionality" time="36.629">
+      <testcase name="Successful registration with valid details" classname="Registration Form functionality" time="36.629"/>
+    </testsuite>
+  </testsuite>
+</testrun>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="MyTestRunner (1)" project="BDD" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="TestRunner.MyTestRunner" time="40.387">
+    <testsuite name="Login Functionality" time="40.386">
+      <testcase name="Verify the login functionality for InValid Password credentials" classname="Login Functionality" time="14.559"/>
+      <testcase name="Login with multiple users" classname="Login Functionality" time="25.827"/>
+    </testsuite>
+  </testsuite>
+</testrun>

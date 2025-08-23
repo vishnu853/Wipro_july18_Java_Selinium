@@ -81,8 +81,8 @@ public class StepDefinitions
 	@When("user enters the Invalid username")
 	public void user_enters_the_invalid_username() throws InterruptedException 
 	{
-		WebElement username= driver.findElement(By.name("username"));
-		username.sendKeys("Admin1ww");
+		WebElement username1= driver.findElement(By.name("username"));
+		username1.sendKeys("Admin1ww");
 		
 		Thread.sleep(2000);
 	}
@@ -90,8 +90,8 @@ public class StepDefinitions
 	@When("user enters the Invalid password")
 	public void user_enters_the_invalid_password() throws InterruptedException 
 	{
-		WebElement password= driver.findElement(By.xpath("//input[@name= 'password']"));
-		password.sendKeys("admin1234123");
+		WebElement password1= driver.findElement(By.xpath("//input[@name= 'password']"));
+		password1.sendKeys("admin1234123");
 		
 		Thread.sleep(2000);
 	}

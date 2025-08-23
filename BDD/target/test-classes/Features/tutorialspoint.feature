@@ -1,5 +1,6 @@
 Feature: Registration Form functionality
 
+
   Scenario: Successful registration with valid details
     Given the user is on the Practice Registration Form page
     When the user enters name "Vishnu Vardhan"
